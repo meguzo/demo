@@ -1,0 +1,18 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/*=====================================================================================
+# components-title
+=====================================================================================*/
+.util-title {
+  font-family: $font-family-english;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  @include line-height(44, 36);
+
+  @include mq("sp") {
+    font-size: 30px;
+    @include line-height(37, 30);
+  }
+}

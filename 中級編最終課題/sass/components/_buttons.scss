@@ -1,0 +1,149 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/*=====================================================================================
+# components-Button
+=====================================================================================*/
+.util-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  max-width: 100%;
+}
+
+/* １つ目のボタン
+----------------------------------------------------------------*/
+.btn-primary {
+  color: #fff;
+  background: $btn-color;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(62, 62, 62, 0.2);
+  transition: background-color 0.4s;
+}
+
+.btn-contact {
+  font-size: 18px;
+  font-weight: 700;
+  @include letter-spacing(0.45, 18);
+  @include line-height(26, 18);
+  padding: 13px 50px;
+  
+  &:hover {
+    background: #f18900;
+  }
+
+  @include mq("sp") {
+    font-size: 16px;
+    letter-spacing: 0;
+    @include line-height(24, 16);
+    padding: 12px 32px;
+  }
+}
+
+.btn-submit {
+  font-size: 18px;
+  font-weight: 700;
+  @include letter-spacing(0.45, 18);
+  @include line-height(26, 18);
+  padding: 12px 50px;
+  background: #B2B2B2;
+
+  @include mq("sp") {
+    font-size: 16px;
+    @include letter-spacing(0.4, 16);
+    @include line-height(26, 16);
+  }
+
+  &.-active {
+    background: $btn-color;
+  }
+}
+
+/* ２つ目のボタン
+----------------------------------------------------------------*/
+.btn-secondary {
+  font-family: $font-family-english;
+  background: #fff;
+  border: 1px solid #707070;
+  transition: all 0.4s;
+
+  &:hover {
+    color: #fff;
+    background: #3e3e3e;
+    border: 1px solid #fff;
+  }
+}
+
+.btn-more {
+  font-size: 20px;
+  font-weight: 600;
+  @include letter-spacing(4, 20);
+  @include line-height(22.5, 20);
+  padding: 19px 77px;
+
+  @include mq("sp") {
+    font-size: 18px;
+    @include letter-spacing(3.6, 20);
+    @include line-height(22.5, 18);
+    padding: 15px 98px;
+  }
+}
+
+/* ３つ目のボタン
+----------------------------------------------------------------*/
+.btn-tertiary {
+  font-family: $font-family-english;
+  color: #fff;
+  background: #3e3e3e;
+  border: 1px solid #fff;
+  transition: all 0.4s;
+  font-size: 20px;
+  font-weight: 600;
+  @include line-height(22.5, 20);
+
+  &:hover {
+    color: #3e3e3e;
+    background: #fff;
+    border: 1px solid #707070;
+  }
+}
+
+.btn-view {
+  @include letter-spacing(4, 20);
+  padding: 19px 77px;
+
+  @include mq("sp") {
+    font-size: 18px;
+    @include letter-spacing(3.6, 18);
+    @include line-height(23, 18);
+    padding: 14px 97px;
+  }
+
+  @include mq("sm") {
+    padding: 14px 83px;
+  }
+}
+
+.btn-google {
+  @include letter-spacing(2, 20);
+  padding: 20px 80px;
+
+  @include mq("tab") {
+    padding: 16px 28px;
+  }
+
+  @include mq("sp") {
+    font-size: 18px;
+    @include letter-spacing(1.8, 18);
+    @include line-height(22.5, 18);
+    padding: 14px 98px;
+  }
+
+  @include mq("sm") {
+    padding: 14px 71px;
+  }
+}

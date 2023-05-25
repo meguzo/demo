@@ -1,0 +1,16 @@
+// 関数（再利用可能な処理を定義するファイル） //
+
+// 関数定義（この関数は、ピクセル値をemに変換するために使用）
+// @function calc-em($px, $base: 16px) {
+//     @return ($px / $base) * 1em;
+//   }
+
+//   // 関数呼び出し
+//   body {
+//     font-size: calc-em(18px); // 結果：1.125em
+//   }
+
+// ビューポート幅に対するピクセル値を算出
+@function vw($width, $px) {
+  @return calc(#{$px / $width * 100vw});
+}

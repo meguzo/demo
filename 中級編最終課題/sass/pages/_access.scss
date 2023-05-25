@@ -1,0 +1,128 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+
+/* access
+----------------------------------------------------------------*/
+.access {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: $bg-secondary-color;
+    width: 76.56%;
+    height: 505px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include mq("tab") {
+      height: vw(1200, 505);
+    }
+
+    @include mq("sp") {
+      width: 100%;
+      height: 573px;
+    }
+  }
+
+  .util-title {
+    color: $secondary-color;
+    text-align-last: left;
+    padding-top: 123px;
+
+    @include mq("tab") {
+      padding-top: vw(1200, 123);
+    }
+
+    @include mq("sp") {
+      padding-top: 40px;
+    }
+  }
+}
+
+.access__inner {
+  position: relative;
+  padding-left: 100px;
+
+  @include mq("tab") {
+    padding-left: 40px;
+  }
+
+  @include mq("sp") {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+  }
+}
+
+.access__address {
+  color: $secondary-color;
+  margin-top: 55px;
+
+  @include mq("tab") {
+    margin-top: vw(1200, 55);
+  }
+
+  @include mq("sp") {
+    margin-top: 36px;
+    font-size: 14px;
+    font-weight: 500;
+    @include line-height(20, 14);
+  }
+}
+
+.access__map {
+  width: 726px;
+  max-width: 100%;
+  height: 520px;
+  position: absolute;
+  content: "";
+  top: 120px;
+  right: 40px;
+
+  @include mq("tab") {
+    width: vw(1200, 726);
+    height: vw(1200, 520);
+    top: vw(1200, 120);
+    right: vw(1200, 40);
+  }
+
+
+  @include mq("sp") {
+    position: static;
+    order: 1;
+    height: 241px;
+    margin-top: 22px;
+  }
+}
+
+.iframe__wrap {
+  width: 100%;
+  padding-top: 520 / 726 * 100%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.access__button {
+  margin-top: 29px;
+
+  @include mq("tab") {
+    margin-top: vw(1200, 29);
+  }
+
+  @include mq("sp") {
+    order: 2;
+    margin-top: 24px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,38 @@
+// 変数(色やフォントサイズなど、プロジェクト全体で使用する定数を定義するファイル) //
+
+//****** レイアウト幅 ******//
+$layout-width-canvas: 1280px;
+$layout-width-inner: 1200px;
+
+//****** フォント ******//
+$font-family-base: "游ゴシック体", YuGothic, "游ゴシック Medium",
+  "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+$font-family-english: "Montserrat", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+//****** カラー ******//
+$font-color: #3E3E3E;
+$secondary-color: #fff;
+$label-color: #3b69ff;
+$required-color: #ff4646;
+$btn-color: #ffaa3b;
+
+//****** 背景カラー ******//
+$bg-main-color: #f3f3f3;
+$bg-secondary-color: #3e3e3e;
+
+//****** 透明度 ******//
+$opacity-base: 0.6;
+
+//****** 階層 ******//
+$z-indexes: (
+  base: 0,
+  footer: 10,
+  comments: 20,
+  access: 30,
+  news: 40,
+  totop: 90,
+  header: 100,
+  modal: 1000,
+);

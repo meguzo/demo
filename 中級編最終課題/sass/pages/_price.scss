@@ -1,0 +1,73 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/* price
+----------------------------------------------------------------*/
+.price {
+  @include mq("sp") {
+    &.section {
+      margin-top: 39px;
+    }
+  }
+}
+
+.price__wrap {
+  margin: 60px auto 0;
+  max-width: 960px;
+
+  @include mq("sp") {
+    margin: 40px auto 0;
+  }
+}
+
+.price__table {
+  border-collapse: collapse; // borderの重なりをなくす
+  table-layout: fixed;
+  width: 100%;
+
+  th,
+  td {
+    font-family: $font-family-english;
+    font-size: 24px;
+    font-weight: 600;
+    border: 1px solid #707070;
+
+    @include mq("sp") {
+      font-size: 20px;
+    }
+  }
+
+  th {
+    color: #fff;
+    background: #3e3e3e;
+    padding: 12px;
+    border-bottom: 1px solid #fff;
+
+    &:first-child {
+      width: 262px;
+
+      @include mq("sp") {
+        width: 100px;
+      }
+    }
+  }
+
+  td {
+    background: #fff;
+    padding-left: 40px;
+
+    @include mq("sp") {
+      padding-left: 20px;
+    }
+  }
+}
+
+.price__attention {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 12px;
+
+  @include mq("sp") {
+    margin-top: 5px;
+  }
+}

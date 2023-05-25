@@ -1,0 +1,157 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/* results
+----------------------------------------------------------------*/
+.results {
+  margin-top: 215px;
+
+  @include mq("sp") {
+    margin-top: 391px;
+  }
+
+  @include mq("sm") {
+    margin-top: 444px;
+  }
+
+  .util-title {
+    color: #fff;
+    text-align: left;
+    padding-top: 60px;
+
+    @include mq("sp") {
+      text-align: center;
+      padding-top: 40px;
+    }
+  }
+}
+
+.results__inner {
+  background: #3e3e3e;
+  margin-left: 3.13%;
+  padding-left: 60px;
+  padding-bottom: 60px;
+  height: 753px;
+
+  @include mq("sp") {
+    margin-left: 0;
+    padding-left: 0;
+    height: 533px;
+  }
+}
+
+.results__button {
+  margin-top: 100px;
+  text-align: left;
+
+  @include mq("sp") {
+    margin-top: 68px;
+    text-align: center;
+  }
+}
+
+/* swiper
+----------------------------------------------------------------*/
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  position: relative;
+}
+
+.swiper {
+  margin-top: 60px;
+
+  @include mq("sp") {
+    margin-top: 41px;
+    padding-left: 4.33%;
+  }
+}
+
+.swiper-slide__body {
+  background: #fff;
+  padding: 13px 16px 21px;
+
+  @include mq("sp") {
+    padding: 8px 15px 10px 11px;
+  }
+}
+
+.swiper-slide__title {
+  font-weight: 700;
+  font-size: 20px;
+
+  @include mq("sp") {
+    font-size: 14px;
+    @include letter-spacing(0.01, 14);
+  }
+}
+
+.swiper-slide__text {
+  font-weight: 500;
+  margin-top: 5px;
+
+  @include mq("sp") {
+    font-size: 12px;
+    @include letter-spacing(0.01, 12);
+    @include line-height(18, 12);
+    margin-top: 6px;
+  }
+}
+
+.swiper-pagination {
+  text-align: left;
+
+  @include mq("sp") {
+    text-align: center;
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: -60px;
+
+  @include mq("sp") {
+    bottom: -44px;
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 19px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* ページネーションの基本スタイル */
+.swiper-pagination-bullet {
+  // position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #fff;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+/* 選択されているページネーションスタイル */
+.swiper-pagination-bullet-active {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff,
+    #fff 6px,
+    #3e3e3e 6px,
+    #3e3e3e 10px,
+    #fff 10px,
+    #fff
+  );
+}

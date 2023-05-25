@@ -1,0 +1,91 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/* service
+----------------------------------------------------------------*/
+.service {
+  background: $bg-secondary-color;
+  height: 401px;
+
+  @include mq("sp") {
+    height: 480px;
+  }
+
+  .util-title {
+    color: $secondary-color;
+    padding-top: 60px;
+
+    @include mq("sp") {
+      padding-top: 40px;
+    }
+  }
+
+  &.section {
+    @include mq("sp") {
+      margin-top: 574px;
+    }
+  }
+}
+
+.service__list {
+  background: #fff;
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 60px;
+  box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+
+  @include mq("sp") {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+.service__item {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 68px 45px 60px;
+
+  @include mq("tab") {
+    padding: 68px 34px 60px;
+  }
+
+  @include mq("sp") {
+    padding: 47px 16px 0;
+
+    &:last-child {
+      padding-bottom: 34px;
+    }
+  }
+}
+
+.service__icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service__title {
+  font-family: $font-family-english;
+  font-size: 20px;
+  font-weight: 600;
+  @include letter-spacing(4, 20);
+  @include line-height(28, 20);
+  text-align: center;
+  margin-top: 12px;
+
+  @include mq("sp") {
+    @include line-height(24, 20);
+    margin-top: 14px;
+  }
+}
+
+.service__text {
+  font-weight: 500;
+  font-size: 14px;
+  @include line-height(24, 14);
+  margin-top: 13px;
+}

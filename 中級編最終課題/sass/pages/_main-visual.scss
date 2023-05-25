@@ -1,0 +1,67 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+@use "../abstract/functions" as *;
+
+/* main-visual
+----------------------------------------------------------------*/
+.main-visual {
+  background: url(/img/mv.png);
+  background-position: 21.5% center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 648px;
+
+  @include mq("sp") {
+    height: 667px;
+    background-position: 22.2% center;
+  }
+}
+
+.main-visual__container {
+  width: 600px;
+  margin-left: auto;
+  padding-top: 228px;
+
+  @include mq("sp") {
+    width: 100%;
+    padding-top: 220px;
+  }
+}
+
+.main-visual__contents-title {
+  font-size: 32px;
+  font-weight: 700;
+  @include letter-spacing(0.02, 32);
+  @include line-height(48, 32);
+
+  @include mq("sp") {
+    font-size: 24px;
+    @include line-height(40, 24);
+    letter-spacing: 0;
+  }
+}
+
+.main-visual__contents-lead {
+  font-size: 18px;
+  font-weight: 700;
+  @include letter-spacing(0.45, 18);
+  @include line-height(28, 18);
+  margin-top: 27px;
+
+  @include mq("sp") {
+    font-size: 14px;
+    letter-spacing: 0;
+    @include line-height(20, 14);
+    margin-top: 22px;
+  }
+}
+
+.main-visual__button {
+  margin-top: 37px;
+
+  @include mq("sp") {
+    margin-top: 27px;
+    padding: 0 20px;
+    text-align: center;
+  }
+}

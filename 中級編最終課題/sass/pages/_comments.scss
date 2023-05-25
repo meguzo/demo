@@ -1,0 +1,104 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/* comments
+----------------------------------------------------------------*/
+.comments {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: $bg-secondary-color;
+    width: 76.56%;
+    height: 576px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    margin-top: 148px;
+
+    @include mq("sp") {
+      width: 100%;
+      margin-top: 60px;
+      height: 426px;
+    }
+  }
+
+  .util-title {
+    text-align-last: left;
+  }
+
+  &.section {
+    margin-top: 112px;
+
+    @include mq("sp") {
+      margin-top: 57px;
+    }
+  }
+}
+
+.comments__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments__container {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  padding: 120px 60px;
+
+  @include mq("sp") {
+    margin: 0 auto;
+    width: 100%;
+    padding: 39px 20px;
+  }
+}
+
+.comments__list {
+  margin-top: 60px;
+
+  @include mq("sp") {
+    margin-top: 36px;
+  }
+}
+
+.comments__item {
+  display: flex;
+
+  & + & {
+    margin-top: 60px;
+
+    @include mq("sp") {
+      margin-top: 34px;
+    }
+  }
+}
+
+.comments__img {
+  width: 100px;
+  height: 100px;
+
+  @include mq("sp") {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.comments__text {
+  width: 414px;
+  margin-left: 32px;
+  @include line-height(24, 16);
+
+  @include mq("sp") {
+    font-size: 14px;
+    @include line-height(20, 14);
+    margin-left: 15px;
+  }
+}
+
+.comments__picture {
+  width: 534px;
+}
+

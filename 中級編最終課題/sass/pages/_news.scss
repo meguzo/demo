@@ -1,0 +1,162 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/* news
+----------------------------------------------------------------*/
+.news {
+  @include mq("sp") {
+    position: relative;
+  }
+
+  &.section {
+    @include mq("sp") {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+}
+
+.news__wrap {
+  width: 100%;
+  padding: 60px 60px 39px 60px;
+  background: #fff;
+  box-shadow: 0 5px 12px rgba(62, 62, 62, 0.2);
+
+  @include mq("sp") {
+    padding: 40px 0;
+    position: absolute;
+    content: "";
+    top: -99px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.news__list {
+  margin-top: 60px;
+
+  @include mq("sp") {
+    margin-top: 39px;
+  }
+}
+
+.news__item {
+  max-width: 1080px;
+  border-top: 1px solid #cecdcd;
+
+  @include mq("sp") {
+    padding: 12px 16px 10px 16px;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid #cecdcd;
+  }
+}
+
+.news__item-link {
+  color: $font-color;
+  padding: 39px 75px 39px 0;
+  display: flex;
+  position: relative;
+
+  &:hover {
+    background: rgba(73, 115, 255, 0.1);
+  }
+
+  @include mq("tab") {
+    display: block;
+  }
+
+  @include mq("sp") {
+    display: block;
+    padding: 0 44px 0 0;
+  }
+}
+
+.news__item-header {
+  display: flex;
+  align-items: center;
+  max-width: 304px;
+}
+
+.news__item-date {
+  font-family: $font-family-english;
+  font-size: 18px;
+  @include letter-spacing(0.45, 18);
+
+  @include mq("sp") {
+    font-size: 14px;
+    @include letter-spacing(0.35, 14);
+  }
+}
+
+.news__item__label {
+  font-size: 14px;
+  @include letter-spacing(0.35, 14);
+  border: 2px solid #3b69ff;
+  border-radius: 50px;
+  padding: 2px 30px;
+  margin-left: 40px;
+
+  @include mq("sp") {
+    font-size: 12px;
+    @include letter-spacing(0.3, 12);
+    padding: 0px 15px;
+    margin-left: 24px;
+  }
+}
+
+.news__item-body {
+  width: calc(100% - 304px);
+
+  @include mq("tab") {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  @include mq("sp") {
+    width: 100%;
+  }
+}
+
+.news__item-title {
+  font-size: 18px;
+  font-weight: 500;
+  @include letter-spacing(0.45, 18);
+  @include line-height(28, 18);
+  margin-left: 40px;
+  width: 100%;
+
+  @include mq("tab") {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @include mq("sp") {
+    font-size: 14px;
+    letter-spacing: 0;
+    @include line-height(20, 14);
+    margin: 9px 20px 0 0;
+  }
+}
+
+.news__item-arrow {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 16px;
+
+  @include mq("sp") {
+    width: 13px;
+    height: 23px;
+    right: -3px;
+  }
+}
+
+.news__button {
+  margin-top: 39px;
+  text-align: center;
+}

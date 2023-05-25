@@ -1,0 +1,26 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/*==========================================================================
+# components-display
+========================================================================== */
+// PCだけ非表示
+.is-pc {
+  @include mq("pc") {
+    display: none;
+  }
+}
+
+// タブレットだけ非表示
+.is-tab {
+  @include mq("tab") {
+    display: none;
+  }
+}
+
+// スマホだけ非表示
+.is-sp {
+  @include mq("sp") {
+    display: none;
+  }
+}

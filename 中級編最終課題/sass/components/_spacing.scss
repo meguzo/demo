@@ -1,0 +1,27 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+/*=====================================================================================
+# components-spacing
+=====================================================================================*/
+.inner {
+  max-width: $layout-width-inner;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: content-box;
+
+  @include mq("sp") {
+    padding: 0 16px;
+  }
+}
+
+.main {
+}
+
+.section {
+  margin-top: 120px;
+
+  @include mq("sp") {
+    margin-top: 60px;
+  }
+}

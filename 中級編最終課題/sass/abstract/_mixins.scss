@@ -1,0 +1,74 @@
+// ミックスイン（複数のCSSプロパティをまとめて定義するファイル） //
+@use "variables" as *;
+
+//****** レスポンシブ表示設定 ******//
+// ブレークポイント
+$breakpoints: (
+  "sm": "screen and (max-width: 320px)",
+  "md": "screen and (min-width: 321px) and (max-width: 766px)",
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (min-width: 768px) and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})",
+) !default;
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//****** line-heightの計算 ******//
+@mixin line-height($height, $pixels) {
+  line-height: calc(#{$height} / #{$pixels});
+}
+
+//****** line-heightの不要な余白を打ち消す設定 ******//
+@mixin line-height-crop($height, $pixels) {
+  $line-height: calc(#{$height} / #{$pixels});
+  font-size: #{$pixels}px;
+  line-height: $line-height;
+
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+    content: "";
+  }
+
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+    content: "";
+  }
+}
+
+//****** 文字間隔を設定（px以外の場合はfont-sizeの記述なし） ******//
+@mixin letter-spacing($spacing, $font-size: 1000) {
+  letter-spacing: calc($spacing / $font-size) + em;
+}
+
+//****** 画像のアスペクト比を維持したまま拡大縮小の設定 ******//
+@mixin responsive-image($ratio-height, $ratio-width) {
+  padding-top: calc(#{$ratio-height} / #{$ratio-width} * 100%);
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//****** z-indexのマップ設定 ******//
+@mixin z-index($name, $value: 0) {
+  $z-index: map-get($z-indexes, $name) + $value;
+  z-index: max($z-index, 0);
+}
